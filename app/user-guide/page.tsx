@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserGuide = () => {
   return (
-    <div className="max-w-3xl mx-auto p-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-xl text-white">
+    <div className="max-w-3xl mt-8 mx-auto p-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-xl text-white">
       <h1 className="text-4xl font-extrabold text-center mb-6">Quick Start Guide</h1>
       
       <div className="space-y-6">
