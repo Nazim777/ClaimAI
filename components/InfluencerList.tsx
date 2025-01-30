@@ -40,39 +40,7 @@ export interface Influencer {
   claims: Claim[];
 }
 
-// Mock data (consider moving to a separate file)
-// const initialInfluencers: Influencer[] = [
-//   {
-//     id: '1',
-//     name: 'Dr. Health',
-//     username: 'drhealth',
-//     followers_count: 10000,
-//     claims: [
-//       {
-//         id: '1',
-//         text: 'Green tea boosts metabolism',
-//         category: 'Nutrition',
-//         status: ClaimStatus.Verified,
-//         trustScore: 0.85,
-//       },
-//     ],
-//   },
-//   {
-//     id: '2',
-//     name: 'Wellness Guru',
-//     username: 'wellnessguru',
-//     followers_count: 20000,
-//     claims: [
-//       {
-//         id: '2',
-//         text: 'Meditation reduces anxiety',
-//         category: 'MentalHealth',
-//         status: ClaimStatus.Verified,
-//         trustScore: 0.92,
-//       },
-//     ],
-//   },
-// ];
+
 
 // Claim Badge UI
 const getStatusBadge = (status: ClaimStatus) => {
@@ -101,7 +69,7 @@ const InfluencerTableRow = ({
       {/* Main influencer row */}
       <TableRow>
         <TableCell className="font-medium">{influencer.name}</TableCell>
-        <TableCell>{influencer.username}</TableCell>
+        <TableCell>@{influencer.username}</TableCell>
         <TableCell>{influencer.followers_count}</TableCell>
         <TableCell className="flex gap-2">
           <Button
