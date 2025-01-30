@@ -1,43 +1,11 @@
 import { notFound } from 'next/navigation';
-
-type Claim = {
-  id: string;
-  text: string;
-  category: string;
-  status: string;
-  trustScore: number;
-  createdAt: string;
-};
-
-type Influencer = {
-  id: string;
-  name: string;
-  username: string;
-  followers_count: number;
-  imageUrl: string;
-  claims: Claim[];
-};
-
-async function getInfluencer(id: string): Promise<Influencer | null> {
-  const res = await fetch(`http://localhost:3000/api/influencers/${id}`, {
-    next: { revalidate: 60 }, // Revalidate every 60 seconds
-  });
-
-  if (!res.ok) {
-    if (res.status === 404) {
-      return null; // Influencer not found
-    }
-    throw new Error('Failed to fetch influencer');
-  }
-
-  return res.json();
-}
+import { getInfluencer } from '@/actions/influencerService';
 
 export default async function InfluencerPage({ params }: { params: { id: string } }) {
   const influencer = await getInfluencer(params.id);
 
   if (!influencer) {
-    notFound(); // Show the 404 page
+    notFound(); 
   }
 
   return (
@@ -45,7 +13,7 @@ export default async function InfluencerPage({ params }: { params: { id: string 
       <h1 className="text-3xl font-bold mb-4">{influencer.name}</h1>
       <div className="flex items-center mb-6">
         <img
-          src={influencer.imageUrl || '/default-avatar.png'}
+          src={influencer.imageUrl || "/default-avatar.png"}
           alt={influencer.name}
           className="w-16 h-16 rounded-full mr-4"
         />

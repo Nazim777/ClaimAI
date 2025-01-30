@@ -89,7 +89,7 @@ export const InfluencerSearch = ({ onAnalysisComplete }: { onAnalysisComplete: (
     <div className="space-y-4">
       <div className="flex gap-4">
         <Input
-          placeholder="Enter influencer name... "
+          placeholder="Enter influencer username... "
           value={influencerName}
           onChange={(e) => setInfluencerName(e.target.value)}
           className="max-w-sm"
