@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+ datasource db {
+  provider = "postgresql" // Change to your database provider (e.g., mysql, sqlite, etc.)
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Claim {
+  id         String         @id @default(cuid())
+  text       String
+  category   String
+  status     String
+  trustScore Float
+  influencer Influencer  @relation(fields: [influencerId], references: [id])
+  influencerId String
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+}
+
+model Influencer {
+  id                   String     @id @default(cuid())
+  name                 String
+  username             String
+  followers_count      Int
+  imageUrl             String? 
+  twitter_user_id      String    @unique
+  claims               Claim[]
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
