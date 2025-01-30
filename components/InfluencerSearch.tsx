@@ -92,14 +92,14 @@ export const InfluencerSearch = ({ onAnalysisComplete }: { onAnalysisComplete: (
           placeholder="Enter influencer username... "
           value={influencerName}
           onChange={(e) => setInfluencerName(e.target.value)}
-          className="max-w-sm"
+          className="px-6 py-3 w-1/2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
           disabled={isAnalyzing}
           aria-label="Influencer Name"
         />
         <Button
           onClick={analyzeInfluencer}
           disabled={isAnalyzing}
-          className="bg-orange-800 text-white"
+          className="ml-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
           aria-busy={isAnalyzing}
         >
           {isAnalyzing ? "Analyzing..." : "Analyze"}

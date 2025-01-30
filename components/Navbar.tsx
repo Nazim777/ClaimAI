@@ -11,27 +11,36 @@ export const Navbar = () => {
         {/* Logo and Brand Name */}
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors duration-200">
-            <Link href="/">HealthCheck</Link>
+            <Link href="/">ClaimAI</Link>
           </h2>
         </div>
 
         {/* Navigation Links and Theme Toggle */}
         <div className="flex items-center space-x-6">
-          <Link
+        <Link
             href="/"
             className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-200 dark:text-gray-400 dark:hover:text-primary"
           >
-            Dashboard
+            Home
           </Link>
-          <Link
+        <Link
             href="/influencers"
             className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-200 dark:text-gray-400 dark:hover:text-primary"
           >
             Influencers
           </Link>
-
-          {/* Theme Toggle Button */}
-          
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-200 dark:text-gray-400 dark:hover:text-primary"
+          >
+            Dashboard
+          </Link>
+          <Link
+            href="/user-guide"
+            className="text-sm font-medium text-gray-600 hover:text-primary transition-colors duration-200 dark:text-gray-400 dark:hover:text-primary"
+          >
+            Userguide
+          </Link>  
         </div>
       </div>
     </nav>
